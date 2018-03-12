@@ -1,0 +1,17 @@
+(require '[clojure.spec.alpha :as s])
+(s/spec #{1 2 3})
+(def x (s/spec #{1 2 3}))
+(x 1)
+(s/conform x 1)
+(s/conform x 2)
+(s/conform x "a')
+(s/conform x "a")
+(def params (s/spec #{:200 :301 :403 :404}))
+(s/conform params :200)]
+(s/conform params :200)
+s/spec #{:200}
+(s/spec #{:200})
+(s/def ::xxx (s/spec #{:200}))
+(s/conform ::xxx 1)
+(s/conform ::xxx :211)
+(s/conform ::xxx :200)
